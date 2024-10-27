@@ -44,3 +44,29 @@ let result = 3 + 4 * 2 // is 11 not 14
 ```
 let result = (3 + 4) * 2 // is 14 not 11
 ```
+
+### SPECIAL NUMBERS _(INFINITY, -INFINITY, NaN)_
+
+- There are three special values in JavaScript that are considered numbers but don't behave like normal numbers.
+
+#### Fist two are:
+
+- _`Infinity`_ & \_`-Infinity`.
+- `Infinity - 1` is still _Infinity_\_
+- don't put too much trust on Infinity based computations as it will quickly lead to NaN
+
+#### The third \_(NaN):
+
+- **NaN** stands for not a number even though it is a value of the number type.
+
+```
+0 / 0 // NaN
+```
+
+```
+Infinity - Infinity // NaN
+```
+
+- Also any non meaningful results out of numeric operations will always be **NaN**.
+
+
