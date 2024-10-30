@@ -37,11 +37,11 @@ The order is
 3. **Multiplication \*, Division /, and Remainder %**
 4. **Addition + and Subtraction -**
 
-```
+```js
 let result = 3 + 4 * 2 // is 11 not 14
 ```
 
-```
+```js
 let result = (3 + 4) * 2 // is 14 not 11
 ```
 
@@ -59,14 +59,122 @@ let result = (3 + 4) * 2 // is 14 not 11
 
 - **NaN** stands for not a number even though it is a value of the number type.
 
-```
+```js
 0 / 0 // NaN
 ```
 
-```
+```js
 Infinity - Infinity // NaN
 ```
 
 - Also any non meaningful results out of numeric operations will always be **NaN**.
 
+### STRINGS
+
+- You can use `''`, `""` or ` ``  `.
+- Almost anything can be put between quotes and JavaScript will make a string value out of it.
+- Few Characters are hard to put between quotes. like __quotes__, __Newlines__ can only be included without escaping by adding `\`.
+- whenever a backslash (`\`) is found inside of quoted text it indicates that the character after it has special meaning, this is called **escaping** the character.
+- `\n` is interpreted as a newline. -`\t` is interpreted as a tab character.
+
+
+
+### "This is the first line\nAnd this is the second"
+
+Output:
+  ```
+  This is the first line
+  And this is the second
+  ```
+- If two backslashes follow each other , they will collapse together
+
+
+### "A newline character is written like \\"\\n\\"."
+
+
+Output:
+ ```js
+A newline character is written like "\n".
+ ```
+----
+
+JavaScript represents strings based on Unicode standard so that strings can be saved as a series of bits to exist inside of computer.
+
+<div align="center">
+
+  <img src="imgs/utf-8-encoding.png" alt="utf-8 encoding"  />
+  <p>(ASCII MAP)</p>
+</div>
+
+---
+
+JavaScript uses 16 bits (2 bytes) per string element describes up to
+2 <sup> 16</sup>
+= 65,536 of permutations of (00000000 00000000) different characters.
+
+Unicode defines more characters than that (about twice) so it will not be enough to
+represent every thing by one byte only we might need more around two or three bytes for
+each in individual character.
+.
+
+> [!TIP]
+> 1 bit = 2 values
+> 2 <sup> n where n is the number of bits </sup>
+>
+> So 2-Bit = 2 \* 2 = 4 values => 4 permutations for binary values so we have
+> 00, 01, 10, 11 =>
+> 1, 2, 3, 4
+
+> [!NOTE] >
+> **So each character in string is can be represented by 2 bytes (00000000 00000000)** > **But there are more characters in Unicode to represent such as emojies**
+
+Example
+
+1. Letter 'A' =
+
+   - Decimal 65
+   - Binary `01000001 00000000`
+
+2. Emoji 👋
+
+   - Decimal 128075
+   - Binary `11011000 10111011 1101111 10011101` (two bytes of 16-bit sequence)
+
+#### Sumary
+
+- For Standard characters like 'A' or 'B'
+
+  - They fit in a single 16-bit position, so their binary representation is straightforward
+
+- For Emojis like 👋
+
+  - They often require two 16-bit sequences.
+
+```
+
+const message = "Hi👋"; // The string has ab emoji
+
+console.log(message.length) // Output: 4
+
+```
+
+> [!CAUTION]
+> Because emoji takes two characters this can be complicated when using `length` depending on the string includes emojis or no.
+
+
+
+### Notice that:
+ The `+` operator doesn't add Strings it **concatenates** strings.
+
+ ----
+
+\` \` are called *template literals* and anything inside of them is converted to string
+
+if ${} added inside template literals any JavaScript code can be executed.
+
+```js
+`half of 100 os ${100 / 2}`
+```
+
+Output: `half of 100 is 50 `
 
