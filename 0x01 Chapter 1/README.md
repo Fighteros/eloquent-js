@@ -178,3 +178,27 @@ if ${} added inside template literals any JavaScript code can be executed.
 
 Output: `half of 100 is 50 `
 
+### UNARY OPERATORS
+
+#### typeof operator
+
+Produces a string value naming the type of the value you give
+
+```js
+console.log(typeof 4.5 );
+// -> number
+console.log(typeof "x");
+// -> string
+
+console.log(typeof NaN);
+// -> number
+```
+
+>[!NOTE]
+> The minus operator can be use both as *unary* and *binary*.
+
+```js
+console.log(- (10 - 2));
+// -> -8
+```
+
