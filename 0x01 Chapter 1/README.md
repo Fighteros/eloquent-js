@@ -202,3 +202,45 @@ console.log(- (10 - 2));
 // -> -8
 ```
 
+
+### BOOLEAN VALUES
+
+JavaScript has a *Boolean* type which has two values `true`, `false`
+
+#### COMPARISON
+
+- The way strings are ordered is roughly alphabetical.
+
+- Uppercase letters are always less than lowercase.
+- Non-alphabetic characters `(!, -, and so on ...)` are included in the ordering
+- When comparing string JavaScript goes from left to right comparing the Unicode codes one by one
+
+
+>[!NOTE]
+> In JavaScript you can compare between strings using operators, this behavior is not correct in languages like Java.
+
+```java
+  // To Compare between String in java
+  String str1 = new String("");
+  String str2 = new String("");
+
+  Str1.equals(Str2);
+```
+since using operators in java will simply compare references of the two strings as string in java is non- primitive data type.
+
+```js
+  // To compare between String in JavaScript
+  console.log("Itchy" != "Scratchy");
+  // -> true
+  console.log("Apple" == "Orange");
+  // -> false
+```
+
+>[!IMPORTANT]
+> There's only one value in JavaScript that is not equal to itself which is NaN;
+
+  ```js
+  console.log(NaN == NaN);
+  // -> false
+  ```
+
