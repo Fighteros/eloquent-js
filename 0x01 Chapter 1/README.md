@@ -272,3 +272,12 @@ JavaScript supports 3 logical operators `&&` = *and*, `||`= *or* and `!` = *not*
   console.log(result); // true
 ```
 
+### EMPTY VALUES
+
+1. `Null`
+2. `undefined`
+
+These are used to denote the absense of meaningful values.
+
+- The difference in meaning between `undefined` `null` is an accident of JavaScript's design and it doesn't matter most of time.
+
