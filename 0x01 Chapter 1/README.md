@@ -51,7 +51,7 @@ let result = (3 + 4) * 2 // is 14 not 11
 
 #### Fist two are:
 
-- _`Infinity`_ & \_`-Infinity`.
+- _`Infinity`_ & `-Infinity`.
 - `Infinity - 1` is still _Infinity_\_
 - don't put too much trust on Infinity based computations as it will quickly lead to NaN
 
@@ -125,7 +125,9 @@ each in individual character.
 > 00, 01, 10, 11 =>
 > 1, 2, 3, 4
 
-> [!NOTE] >
+
+
+> [!NOTE]
 > **So each character in string is can be represented by 2 bytes (00000000 00000000)** > **But there are more characters in Unicode to represent such as emojies**
 
 Example
@@ -243,4 +245,30 @@ since using operators in java will simply compare references of the two strings 
   console.log(NaN == NaN);
   // -> false
   ```
+
+
+
+### LOGICAL OPERATORS
+
+
+JavaScript supports 3 logical operators `&&` = *and*, `||`= *or* and `!` = *not*.
+
+#### Precedence
+
+1. Parentheses `()`
+2. Logical NOT `!`
+3. Logical AND `&&`
+4. Logical OR `||`
+5. Conditional operator `? :`
+
+```js
+  let a = true, b = false, c = true;
+  let result = a || b && !c;
+  // Precedence order:
+  // 1. !c -> false
+  // 2. b && !c -> false
+  // 3. a || (b && !c) -> true
+
+  console.log(result); // true
+```
 
