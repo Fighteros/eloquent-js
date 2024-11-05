@@ -38,11 +38,11 @@ The order is
 4. **Addition + and Subtraction -**
 
 ```js
-let result = 3 + 4 * 2 // is 11 not 14
+let result = 3 + 4 * 2; // is 11 not 14
 ```
 
 ```js
-let result = (3 + 4) * 2 // is 14 not 11
+let result = (3 + 4) * 2; // is 14 not 11
 ```
 
 ### SPECIAL NUMBERS _(INFINITY, -INFINITY, NaN)_
@@ -60,11 +60,11 @@ let result = (3 + 4) * 2 // is 14 not 11
 - **NaN** stands for not a number even though it is a value of the number type.
 
 ```js
-0 / 0 // NaN
+0 / 0; // NaN
 ```
 
 ```js
-Infinity - Infinity // NaN
+Infinity - Infinity; // NaN
 ```
 
 - Also any non meaningful results out of numeric operations will always be **NaN**.
@@ -73,30 +73,30 @@ Infinity - Infinity // NaN
 
 - You can use `''`, `""` or ` ``  `.
 - Almost anything can be put between quotes and JavaScript will make a string value out of it.
-- Few Characters are hard to put between quotes. like __quotes__, __Newlines__ can only be included without escaping by adding `\`.
+- Few Characters are hard to put between quotes. like **quotes**, **Newlines** can only be included without escaping by adding `\`.
 - whenever a backslash (`\`) is found inside of quoted text it indicates that the character after it has special meaning, this is called **escaping** the character.
 - `\n` is interpreted as a newline. -`\t` is interpreted as a tab character.
-
-
 
 ### "This is the first line\nAnd this is the second"
 
 Output:
-  ```
-  This is the first line
-  And this is the second
-  ```
-- If two backslashes follow each other , they will collapse together
 
+```
+This is the first line
+And this is the second
+```
+
+- If two backslashes follow each other , they will collapse together
 
 ### "A newline character is written like \\"\\n\\"."
 
-
 Output:
- ```js
+
+```js
 A newline character is written like "\n".
- ```
-----
+```
+
+---
 
 JavaScript represents strings based on Unicode standard so that strings can be saved as a series of bits to exist inside of computer.
 
@@ -125,10 +125,9 @@ each in individual character.
 > 00, 01, 10, 11 =>
 > 1, 2, 3, 4
 
-
-
 > [!NOTE]
-> **So each character in string is can be represented by 2 bytes (00000000 00000000)** > **But there are more characters in Unicode to represent such as emojies**
+>  So each character in string is can be represented by 2 bytes (00000000 00000000)
+>  But there are more characters in Unicode to represent such as emojies
 
 Example
 
@@ -163,19 +162,18 @@ console.log(message.length) // Output: 4
 > [!CAUTION]
 > Because emoji takes two characters this can be complicated when using `length` depending on the string includes emojis or no.
 
-
-
 ### Notice that:
- The `+` operator doesn't add Strings it **concatenates** strings.
 
- ----
+The `+` operator doesn't add Strings it **concatenates** strings.
 
-\` \` are called *template literals* and anything inside of them is converted to string
+---
+
+<code>``</code> are called _template literals_ and anything inside of them is converted to string
 
 if ${} added inside template literals any JavaScript code can be executed.
 
 ```js
-`half of 100 os ${100 / 2}`
+`half of 100 os ${100 / 2}`;
 ```
 
 Output: `half of 100 is 50 `
@@ -187,7 +185,7 @@ Output: `half of 100 is 50 `
 Produces a string value naming the type of the value you give
 
 ```js
-console.log(typeof 4.5 );
+console.log(typeof 4.5);
 // -> number
 console.log(typeof "x");
 // -> string
@@ -196,18 +194,17 @@ console.log(typeof NaN);
 // -> number
 ```
 
->[!NOTE]
-> The minus operator can be use both as *unary* and *binary*.
+> [!NOTE]
+> The minus operator can be use both as _unary_ and _binary_.
 
 ```js
-console.log(- (10 - 2));
+console.log(-(10 - 2));
 // -> -8
 ```
 
-
 ### BOOLEAN VALUES
 
-JavaScript has a *Boolean* type which has two values `true`, `false`
+JavaScript has a _Boolean_ type which has two values `true`, `false`
 
 #### COMPARISON
 
@@ -217,8 +214,7 @@ JavaScript has a *Boolean* type which has two values `true`, `false`
 - Non-alphabetic characters `(!, -, and so on ...)` are included in the ordering
 - When comparing string JavaScript goes from left to right comparing the Unicode codes one by one
 
-
->[!NOTE]
+> [!NOTE]
 > In JavaScript you can compare between strings using operators, this behavior is not correct in languages like Java.
 
 ```java
@@ -228,30 +224,28 @@ JavaScript has a *Boolean* type which has two values `true`, `false`
 
   Str1.equals(Str2);
 ```
+
 since using operators in java will simply compare references of the two strings as string in java is non- primitive data type.
 
 ```js
-  // To compare between String in JavaScript
-  console.log("Itchy" != "Scratchy");
-  // -> true
-  console.log("Apple" == "Orange");
-  // -> false
+// To compare between String in JavaScript
+console.log("Itchy" != "Scratchy");
+// -> true
+console.log("Apple" == "Orange");
+// -> false
 ```
 
->[!IMPORTANT]
+> [!IMPORTANT]
 > There's only one value in JavaScript that is not equal to itself which is NaN;
 
-  ```js
-  console.log(NaN == NaN);
-  // -> false
-  ```
-
-
+```js
+console.log(NaN == NaN);
+// -> false
+```
 
 ### LOGICAL OPERATORS
 
-
-JavaScript supports 3 logical operators `&&` = *and*, `||`= *or* and `!` = *not*.
+JavaScript supports 3 logical operators `&&` = _and_, `||`= _or_ and `!` = _not_.
 
 #### Precedence
 
@@ -262,14 +256,16 @@ JavaScript supports 3 logical operators `&&` = *and*, `||`= *or* and `!` = *not*
 5. Conditional operator `? :`
 
 ```js
-  let a = true, b = false, c = true;
-  let result = a || b && !c;
-  // Precedence order:
-  // 1. !c -> false
-  // 2. b && !c -> false
-  // 3. a || (b && !c) -> true
+let a = true,
+  b = false,
+  c = true;
+let result = a || (b && !c);
+// Precedence order:
+// 1. !c -> false
+// 2. b && !c -> false
+// 3. a || (b && !c) -> true
 
-  console.log(result); // true
+console.log(result); // true
 ```
 
 ### EMPTY VALUES
@@ -280,4 +276,79 @@ JavaScript supports 3 logical operators `&&` = *and*, `||`= *or* and `!` = *not*
 These are used to denote the absense of meaningful values.
 
 - The difference in meaning between `undefined` `null` is an accident of JavaScript's design and it doesn't matter most of time.
+
+### AUTOMATIC TYPE CONVERSION
+
+#### Odd thigs
+
+```js
+console.log(8 * null);
+// -> 0
+console.log("5" - 1);
+// -> 4
+console.log("5" + 1);
+// -> 51
+console.log("five" * 2);
+// -> NaN
+console.log(false == 0);
+// -> true
+```
+
+> [!NOTE]
+> When an operator is applied to the wrong type of a value JavaScript will quietly
+> convert that value to the type it needs using set of rules
+> that not expectable.
+this is called type coercion.
+
+### Type coercion
+
+#### Implicit coercion
+
+1. When string is used with `+` operator any other value type is coerced to string `(concatenation)`
+2. When string is used with  `-` ,`*` , `/` or `%` any other value it gets coerced to number.
+
+
+#### Explicit coercion
+
+Converting values manually
+using `Number()`, `String()` or `Boolean`
+
+```js
+let num = Number('5'); // Convert string 5 to number 5
+let str = String(10); // Convert number 10 to string 10
+let bool = Boolean(1); // Convert Number 1 to true
+```
+
+
+>[!IMPORTANT]
+> JavaScript coerces values to boolean in conditions `if`, `while`
+> where values like `0`, `""`, `null`, `undefined` and `NaN` are treated as `false`
+> and others as `true`.
+
+#### Avoiding issues with type conversion
+
+1. use strict equality operator `===` when possible to avoid implicit type coerce.
+2. Explicitly coerce values when performing operations between different values.
+
+JavaScript has both strict (`===`) and loose (`==`) equality operators.
+
+1. **Loose operator** (`==`)  allows type coercion.
+2. **strict operator** (`===`) don't allow type coercion.
+
+```js
+  0 == false // true (0 is coerced to false)
+  0 === false // false (strict check, no coercion)
+  '5' == 5 // true (coerced to the same type)
+  '5' === 5 // false (no coercion, types are different)
+```
+
+Notice that when using loose operator if you get on both sides null or undefined. it produces true.
+```js
+  console.log(null == undefined) // true
+  console.log(undefined == undefined) // true
+  console.log(null == null) // true
+  console.log(NaN == NaN) // false
+  console.log(0 == null) // false
+```
+
 
